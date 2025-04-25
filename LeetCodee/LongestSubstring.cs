@@ -24,5 +24,4 @@ public static class LongestSubstring{
 
         return maxLength;
     }
-tё
 }

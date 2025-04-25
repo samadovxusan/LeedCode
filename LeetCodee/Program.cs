@@ -4,9 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        var sum = LongestSubstring.LengthOfLongestSubstring("abcabcbb");
-        Console.WriteLine(sum);
-
+        var sum = SpiralMatrix.GenerateMatrix(3);
+        foreach (var index in sum)
+        {
+            foreach (var item in index)
+            {
+                Console.WriteLine($"{ item}  ");
+            }
+        }
 
 
     }
