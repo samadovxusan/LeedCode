@@ -1,4 +1,6 @@
-﻿namespace LeetCodee;
+﻿using System.Collections.Specialized;
+
+namespace LeetCodee;
 
 public static class FizzBuzz
 {
@@ -24,14 +26,36 @@ public static class FizzBuzz
             }
         }
     }
+
     public static bool IsPalindrome(int number)
     {
         string original = number.ToString();
         char[] arr = original.ToCharArray();
         Array.Reverse(arr);
         string reversed = new string(arr);
-    
+
         return original == reversed;
+    }
+
+    public static string CloseNumber(List<int> numbers)
+    {
+        numbers.Sort();
+
+        int minDiff = int.MaxValue;
+        string closestPair = "";
+
+        for (int i = 0; i < numbers.Count - 1; i++)
+        {
+            int diff = Math.Abs(numbers[i] - numbers[i + 1]);
+
+            if (diff < minDiff)
+            {
+                minDiff = diff;
+                closestPair = $"{numbers[i]} , {numbers[i + 1]}";
+            }
+        }
+
+        return closestPair;
     }
 
 }

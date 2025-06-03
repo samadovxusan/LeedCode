@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Raqam kriting");
-        var palodrome = Int32.Parse(Console.ReadLine() ?? string.Empty);
-        Console.WriteLine(FizzBuzz.IsPalindrome(palodrome));
+        var numbers = new List<int> { 4, 9, 1, 32, 13, 8, 17 };
+
+        Console.WriteLine(FizzBuzz.CloseNumber(numbers));
     }
 }
