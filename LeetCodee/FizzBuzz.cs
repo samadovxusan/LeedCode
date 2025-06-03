@@ -24,4 +24,14 @@ public static class FizzBuzz
             }
         }
     }
+    public static bool IsPalindrome(int number)
+    {
+        string original = number.ToString();
+        char[] arr = original.ToCharArray();
+        Array.Reverse(arr);
+        string reversed = new string(arr);
+    
+        return original == reversed;
+    }
+
 }

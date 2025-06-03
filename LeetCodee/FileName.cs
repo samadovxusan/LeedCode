@@ -8,21 +8,22 @@ namespace LeetCodee
 {
     public static class RemoveElementArray
     {
-            public static int RemoveElement(int[] nums, int val)
+        public static int RemoveElement(int[] nums, int val)
+        {
+            int result = 0;
+            foreach (var item in nums)
             {
-                int result = 0;
-                foreach (var item in nums)
+                if (item != val)
                 {
-                    if (item != val)
-                    {
-                        nums[result] = item;
-                        result++;
-                    }
+                    nums[result] = item;
+                    result++;
                 }
-
-                return result;
             }
+
+            return result;
+        }
     }
+
     public static class RemoveElementArray2
     {
         public static int RemoveElement(int[] nums, int val)
@@ -39,6 +40,7 @@ namespace LeetCodee
 
             return result;
         }
+
         public static int RemoveElementTwo(int[] nums, int val)
         {
             int result = 0;
@@ -52,6 +54,16 @@ namespace LeetCodee
             }
 
             return result;
+        }
+
+        public static bool IsPalindrome(int number)
+        {
+            string original = number.ToString();
+            char[] arr = original.ToCharArray();
+            Array.Reverse(arr);
+            string reversed = new string(arr);
+
+            return original == reversed;
         }
     }
 }
