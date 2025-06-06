@@ -57,6 +57,7 @@ public static class FizzBuzz
 
         return closestPair;
     }
+
     public static bool IsValidParentheses(string s)
     {
         var stack = new Stack<char>();
@@ -81,5 +82,65 @@ public static class FizzBuzz
         }
 
         return stack.Count == 0;
+    }
+
+    public static int ThreeSumClosest(int[] nums, int target)
+    {
+        if (nums.Length == 3)
+        {
+            return nums[0] + nums[1] + nums[2];
+        }
+
+        Array.Sort(nums);
+
+        var smallestSum = nums[0] + nums[1] + nums[2];
+
+        if (target < 0 && smallestSum >= target)
+        {
+            return smallestSum;
+        }
+
+        var greatestSum = nums[^1] + nums[^2] + nums[^3];
+
+        if (target >= 0 && greatestSum <= target)
+        {
+            return greatestSum;
+        }
+
+        int closestSum = int.MaxValue;
+        int result = 0;
+
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            int left = i + 1;
+            int right = nums.Length - 1;
+
+            while (left < right)
+            {
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if (sum == target)
+                {
+                    return sum;
+                }
+
+                if (Math.Abs(sum - target) < Math.Abs(closestSum - target))
+                {
+                    closestSum = sum;
+                    result = sum;
+                }
+
+                if (sum < target)
+                {
+                    left++;
+                }
+                else
+                {
+                    right--;
+                }
+            }
+        }
+
+        return result;
     }
 }
