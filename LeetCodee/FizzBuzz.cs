@@ -143,4 +143,25 @@ public static class FizzBuzz
 
         return result;
     }
+
+    public static int MaxArea(int[] height)
+    {
+        int left = 0, right = height.Length - 1;
+        int maxArea = 0;
+
+        while (left < right)
+        {
+            int h = Math.Min(height[left], height[right]);
+            int w = right - left;
+            int area = h * w;
+            maxArea = Math.Max(maxArea, area);
+
+            if (height[left] < height[right])
+                left++;
+            else
+                right--;
+        }
+
+        return maxArea;
+    }
 }
