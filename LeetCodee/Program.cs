@@ -1,11 +1,12 @@
-﻿namespace LeetCodee;
+﻿using LeetCodee.Problems;
+
+namespace LeetCodee;
 
 class Program
 {
     static void Main(string[] args)
     {
-        var str = "()[]{}{{{{}";
-
-        Console.WriteLine(FizzBuzz.IsValidParentheses(str));
+        var result = ClimbStairs.ClimbStairsMethod(45);
+        Console.WriteLine(result);
     }
 }

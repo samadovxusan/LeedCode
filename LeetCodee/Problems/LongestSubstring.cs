@@ -1,4 +1,4 @@
-﻿namespace LeetCodee;
+﻿namespace LeetCodee.Problems;
 
 public static class LongestSubstring{
     public static int LengthOfLongestSubstring(string s)
