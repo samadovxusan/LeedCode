@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        var result = ClimbStairs.ClimbStairsMethod(45);
+        var result = convertToTitles.convertToTitle(28);
         Console.WriteLine(result);
     }
 }
