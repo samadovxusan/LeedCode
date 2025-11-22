@@ -1,4 +1,6 @@
 ﻿using LeetCodee.Problems;
+using LeetCodee.Problems.LinkedList;
+using LeetCodee.Problems.Sorting;
 
 namespace LeetCodee;
 
@@ -6,7 +8,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        var result = largestNumberы.largestNumber(new List<int> { 3, 30, 34, 5, 9 });
-        Console.WriteLine(result);
+        var nums = new LinkedList<int>();
+        nums.AddLast(1);
+        nums.AddLast(5);
+        nums.AddLast(7);
+        nums.AddLast(22);
+        nums.AddLast(44);
+
+
+
+
+        Console.WriteLine(Example.FindTarget(nums));
     }
 }
