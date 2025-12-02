@@ -1,4 +1,5 @@
-﻿using LeetCodee.Problems;
+﻿using LeetCodee.OppExample;
+using LeetCodee.Problems;
 using LeetCodee.Problems.LinkedList;
 using LeetCodee.Problems.Sorting;
 
@@ -8,16 +9,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        var nums = new LinkedList<int>();
-        nums.AddLast(1);
-        nums.AddLast(5);
-        nums.AddLast(7);
-        nums.AddLast(22);
-        nums.AddLast(44);
+
+        Dasturchi YangiDasturchi = new Dasturchi()
+        {
+            Name = "Husan",
+            Age = 25,
+            Til = "C#"
+        };
+
+        YangiDasturchi.UpdateMoash(100.000);
+
+        Console.WriteLine($"{YangiDasturchi.Name}  {YangiDasturchi.Til}");
+        YangiDasturchi.Tanishish();
+        var result =  YangiDasturchi.GetMoash();
+        Console.WriteLine($"mening Muoshim : {result}");
 
 
-
-
-        Console.WriteLine(Example.FindTarget(nums));
     }
 }
